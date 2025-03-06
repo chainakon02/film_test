@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+
+
+body {
+  background-color: var(--color-neutral-300);
+  color: var(--color-dark);
+  font-size: var(--size-font);
+}
+
+.cloneable {
+  padding: var(--container-padding);
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  display: flex;
+  position: relative;
+}
+
+.looping-words {
+  height: 2.7em;
+  padding-left: .1em;
+  padding-right: .1em;
+  font-size: 11vw;
+  line-height: .9;
+  position: relative;
+}
+
+.looping-words__list {
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+  flex-flow: column;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  font-family: "Kanit", sans-serif;
+  font-weight: 700;
+  list-style: none;
+  display: flex;
+  position: relative;
+}
+
+.highlight {
+  color: #B44AFF;
+}
+
+
+.looping-words__list.is--primary {
+  color: var(--color-primary);
+}
+
+.looping-words__list.is--gray {
+  color: var(--color-neutral-500);
+}
+
+.looping-words__fade {
+  background-image: linear-gradient(180deg, var(--color-neutral-300) 5%, transparent 40%, transparent 60%, var(--color-neutral-300) 95%);
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.looping-words__fade.is--radial {
+  background-image: radial-gradient(circle closest-side at 50% 50%, transparent 64%, var(--color-neutral-400) 93%);
+  width: 140%;
+  display: block;
+  left: -20%;
+}
+
+.looping-words__selector {
+  pointer-events: none;
+  width: 100%;
+  height: .9em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.looping-words__edge {
+  border-top: .035em solid var(--color-primary);
+  border-left: .035em solid var(--color-primary);
+  width: .125em;
+  height: .125em;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.looping-words__edge.is--2 {
+  left: auto;
+  right: 0;
+  transform: rotate(90deg);
+}
+
+.looping-words__edge.is--3 {
+  inset: auto 0 0 auto;
+  transform: rotate(180deg);
+}
+
+.looping-words__edge.is--4 {
+  top: auto;
+  bottom: 0;
+  transform: rotate(270deg);
+}
+
+.looping-words__containers {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.looping-words__p {
+  margin: 0;
+}
+
+.loading-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #e6dcdc;
+}
+
+.cat {
+  position: relative;
+  width: 100%;
+  max-width: 20em;
+  overflow: hidden;
+}
+
+.cat::before {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+.cat__body, .cat__tail, .cat__head {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  animation: rotating 2.79s cubic-bezier(0.65, 0.54, 0.12, 0.93) infinite;
+}
+
+.cat__body::before, .cat__tail::before, .cat__head::before {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  background-size: 200%;
+  background-repeat: no-repeat;
+  background-image: url("https://images.weserv.nl/?url=i.imgur.com/M1raXX3.png&il");
+}
+
+.cat__head::before {
+  top: 0;
+  right: 0;
+  background-position: 100% 0%;
+  transform-origin: 0% 100%;
+  transform: rotate(90deg);
+}
+
+.cat__tail {
+  animation-delay: 0.2s;
+}
+
+.cat__tail::before {
+  left: 0;
+  bottom: 0;
+  background-position: 0% 100%;
+  transform-origin: 100% 0%;
+  transform: rotate(-30deg);
+}
+
+.cat__body {
+  animation-delay: 0.1s;
+}
+
+.cat__body:nth-of-type(2) {
+  animation-delay: 0.2s;
+}
+
+.cat__body::before {
+  right: 0;
+  bottom: 0;
+  background-position: 100% 100%;
+  transform-origin: 0% 0%;
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(720deg);
+  }
+  to {
+    transform: none;
+  }
+}
