@@ -203,3 +203,85 @@ body {
     transform: none;
   }
 }
+
+
+@media screen and (max-width: 768px) {
+  /* ปรับขนาดตัวอักษรให้เล็กลงในมือถือ */
+  .looping-words {
+    font-size: 7vw; 
+  }
+
+  /* ปรับขนาดให้เหมาะกับหน้าจอขนาดเล็ก */
+  .cloneable {
+    padding: 10px;
+    flex-direction: column;
+  }
+
+  .loading-screen {
+    height: 100vh;
+  }
+
+  .cat {
+    max-width: 12em; /* ลดขนาดของ animation */
+  }
+}
+
+
+@media screen and (max-width: 480px) {
+  /* สำหรับมือถือขนาดเล็กมาก */
+  .looping-words {
+    font-size: 6vw; 
+  }
+
+  .cat {
+    max-width: 10em;
+  }
+
+  .looping-words__list {
+    font-size: 5vw;
+  }
+
+  .loading-screen {
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  /* ปรับขนาดตัวอักษรให้เล็กลงในมือถือ */
+  .looping-words {
+    font-size: 7vw; 
+  }
+
+  /* ปรับขนาดให้เหมาะกับหน้าจอขนาดเล็ก */
+  .cloneable {
+    padding: 10px;
+    flex-direction: column;
+  }
+
+  .loading-screen {
+    height: 100vh;
+  }
+
+  .cat {
+    max-width: 12em; /* ลดขนาดของ animation */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* สำหรับมือถือขนาดเล็กมาก */
+  .looping-words {
+    font-size: 6vw; 
+  }
+
+  .cat {
+    max-width: 10em;
+  }
+
+  .looping-words__list {
+    font-size: 5vw;
+  }
+
+  .loading-screen {
+    padding: 20px;
+  }
+}
